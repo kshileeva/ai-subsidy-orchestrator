@@ -1,0 +1,44 @@
+START
+│
+├── Check ELIGIBILITY:
+│   ├── Is residency ≥ 6 consecutive months?
+│   ├── Is at least one guardian employed, a student, or in reintegration?
+│   ├── Is annual gross household income < upper quartile?
+│   ├── Is identity (BSN) and enrollment/proof provided?
+│   ├── Is there at least one child < 12 years old?
+│   │
+│   └── IF ANY are FALSE:
+│       ├── Label = "rejected"
+│       ├── Notify user via email (rejection reason)
+│       └── Store full TapeAgent history linked to `application_id` in DB
+│
+└── IF ALL TRUE → Eligible → CONTINUE
+    │
+    ├── Check VULNERABILITY:
+    │   ├── Is it a single-parent household?
+    │   └── Is the application flagged by Social Support Desk?
+    │
+    └── IF YES to either:
+        ├── Label = "check_by_human"
+        ├── Notify user (provisional approval)
+        ├── Redirect to human officer
+        └── Store full TapeAgent history linked to `application_id`
+    │
+    └── ELSE → Calculate SUBSIDY
+        │
+        ├── Determine reimbursement rate based on income percentile:
+        │   ├── < 25th percentile → 85%
+        │   ├── 25th–50th percentile → 60%
+        │   ├── 50th–75th percentile → 30%
+        │
+        ├── Enforce child cap (max 2 children reimbursed)
+        │
+        ├── IF num_children > 3 AND income is very low (e.g. < 15th percentile):
+        │   ├── Label = "human_evaluation"
+        │   ├── Forward to municipal worker
+        │   └── Store full TapeAgent history
+        │
+        └── ELSE:
+            ├── Label = "approved"
+            ├── Send subsidy decision to revenue compliance unit
+            └── Store full TapeAgent history linked to `application_id`
