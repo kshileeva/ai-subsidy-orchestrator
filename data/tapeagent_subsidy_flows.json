@@ -1,0 +1,722 @@
+[
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075912",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A001 - Laura Visser",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A001_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Laura Visser has 1 children, employment status: unemployed, housing: municipal housing. Flags raised: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A001_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A001 for human review due to: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A001_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075927",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A002 - Amina Hassan",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A002_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Amina Hassan has 1 children, employment status: unemployed, housing: temporary shelter. Flags raised: none.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A002_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Approve A002 for subsidy processing. No critical flags.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AutoApprove",
+          "prompt_id": "A002_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075936",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A003 - Raj Patel",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A003_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Raj Patel has 1 children, employment status: part-time, housing: rental. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A003_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A003 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A003_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075945",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A004 - Mohammed El Amrani",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A004_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Mohammed El Amrani has 1 children, employment status: part-time, housing: municipal housing. Flags raised: none.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A004_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Approve A004 for subsidy processing. No critical flags.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AutoApprove",
+          "prompt_id": "A004_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075956",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A005 - Anouk Smit",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A005_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Anouk Smit has 3 children, employment status: self-employed, housing: owned. Flags raised: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A005_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A005 for human review due to: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A005_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075969",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A006 - Laura Visser",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A006_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Laura Visser has 1 children, employment status: unemployed, housing: municipal housing. Flags raised: high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A006_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A006 for human review due to: high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A006_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075979",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A007 - Kimberly van Dijk",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A007_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Kimberly van Dijk has 4 children, employment status: unemployed, housing: temporary shelter. Flags raised: none.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A007_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Approve A007 for subsidy processing. No critical flags.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AutoApprove",
+          "prompt_id": "A007_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.075993",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A008 - Raj Patel",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A008_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Raj Patel has 1 children, employment status: part-time, housing: rental. Flags raised: none.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A008_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Approve A008 for subsidy processing. No critical flags.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AutoApprove",
+          "prompt_id": "A008_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076005",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A009 - Sara Nguyen",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A009_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Sara Nguyen has 1 children, employment status: self-employed, housing: municipal housing. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A009_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A009 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A009_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076016",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A010 - Laura Visser",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A010_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Laura Visser has 1 children, employment status: unemployed, housing: municipal housing. Flags raised: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A010_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A010 for human review due to: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A010_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076028",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A011 - Carlos Mendes",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A011_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Carlos Mendes has 3 children, employment status: part-time, housing: rental. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A011_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A011 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A011_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076037",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A012 - Raj Patel",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A012_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Raj Patel has 1 children, employment status: part-time, housing: rental. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A012_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A012 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A012_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076043",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A013 - Laura Visser",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A013_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Laura Visser has 1 children, employment status: unemployed, housing: municipal housing. Flags raised: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A013_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A013 for human review due to: incomplete_docs, high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A013_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076049",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A014 - Anouk Smit",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A014_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Anouk Smit has 3 children, employment status: self-employed, housing: owned. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A014_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A014 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A014_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076065",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A015 - Sara Nguyen",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A015_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Sara Nguyen has 1 children, employment status: self-employed, housing: municipal housing. Flags raised: high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A015_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A015 for human review due to: high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A015_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076073",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A016 - Laura Visser",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A016_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Laura Visser has 1 children, employment status: unemployed, housing: municipal housing. Flags raised: high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A016_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A016 for human review due to: high_hours_request.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A016_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076078",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A017 - Fatima de Jong",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A017_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Fatima de Jong has 1 children, employment status: part-time, housing: municipal housing. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A017_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A017 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A017_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076083",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A018 - Jeroen Bakker",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A018_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Jeroen Bakker has 1 children, employment status: self-employed, housing: temporary shelter. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A018_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A018 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A018_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076088",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A019 - Raj Patel",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A019_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Raj Patel has 1 children, employment status: part-time, housing: rental. Flags raised: none.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A019_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Approve A019 for subsidy processing. No critical flags.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AutoApprove",
+          "prompt_id": "A019_action"
+        }
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "author": "Hack4HerTeam",
+      "created_at": "2025-06-13T03:38:51.076094",
+      "parent_id": null
+    },
+    "steps": [
+      {
+        "type": "Observation",
+        "content": "Received new childcare subsidy application: A020 - Amina Hassan",
+        "metadata": {
+          "agent": "Agent-Intake",
+          "node": "ObserveApplication",
+          "prompt_id": "A020_obs"
+        }
+      },
+      {
+        "type": "Thought",
+        "content": "Applicant Amina Hassan has 1 children, employment status: unemployed, housing: temporary shelter. Flags raised: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "AssessEligibility",
+          "prompt_id": "A020_thought"
+        }
+      },
+      {
+        "type": "Action",
+        "content": "Flag A020 for human review due to: incomplete_docs.",
+        "metadata": {
+          "agent": "Agent-Review",
+          "node": "FlagForHumanReview",
+          "prompt_id": "A020_action"
+        }
+      }
+    ]
+  }
+]
