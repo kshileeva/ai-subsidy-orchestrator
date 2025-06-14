@@ -1,44 +1,51 @@
 START
 │
 ├── Check ELIGIBILITY:
-│   ├── Is residency ≥ 6 consecutive months?
-│   ├── Is at least one guardian employed, a student, or in reintegration?
-│   ├── Is annual gross household income < upper quartile?
-│   ├── Is identity (BSN) and enrollment/proof provided?
-│   ├── Is there at least one child < 12 years old?
+│   ├── Has the applicant resided legally in the municipality for ≥ 6 consecutive months?  [CSAR §2.1]
+│   ├── Is at least one guardian:
+│   │   ├── employed, OR
+│   │   ├── in a recognized education/vocational program, OR
+│   │   └── in a reintegration/reskilling trajectory?  [CSAR §2.2]
+│   ├── Is annual gross household income < municipal upper quartile?  [CSAR §2.3]
+│   ├── Have ALL required documents been submitted?  [CSAR §3.1]
+│   │   ├── Identity verification (BSN or equivalent)
+│   │   ├── Proof of childcare enrollment
+│   │   ├── Household income statement (12 months)
+│   │   └── Declaration of employment/education activity
+│   ├── Is there at least one child < 12 years old?  [CSAR §1.2]
 │   │
 │   └── IF ANY are FALSE:
-│       ├── Label = "rejected"
-│       ├── Notify user via email (rejection reason)
-│       └── Store full TapeAgent history linked to `application_id` in DB
+│       ├── Label = “rejected”
+│       ├── Notify user via email (specify rejection reason)
+│       └── Store full TapeAgent history linked to application_id in DB
 │
 └── IF ALL TRUE → Eligible → CONTINUE
-    │
-    ├── Check VULNERABILITY:
-    │   ├── Is it a single-parent household?
-    │   └── Is the application flagged by Social Support Desk?
-    │
-    └── IF YES to either:
-        ├── Label = "check_by_human"
-        ├── Notify user (provisional approval)
-        ├── Redirect to human officer
-        └── Store full TapeAgent history linked to `application_id`
-    │
-    └── ELSE → Calculate SUBSIDY
-        │
-        ├── Determine reimbursement rate based on income percentile:
-        │   ├── < 25th percentile → 85%
-        │   ├── 25th–50th percentile → 60%
-        │   ├── 50th–75th percentile → 30%
-        │
-        ├── Enforce child cap (max 2 children reimbursed)
-        │
-        ├── IF num_children > 3 AND income is very low (e.g. < 15th percentile):
-        │   ├── Label = "human_evaluation"
-        │   ├── Forward to municipal worker
-        │   └── Store full TapeAgent history
-        │
-        └── ELSE:
-            ├── Label = "approved"
-            ├── Send subsidy decision to revenue compliance unit
-            └── Store full TapeAgent history linked to `application_id`
+│
+├── Check VULNERABILITY:  [CSAR §2.4]
+│   ├── Is it a single-parent household?
+│   └── Is the application flagged by Social Support Desk?
+│
+└── IF YES to either:
+├── Label = “check_by_human”
+├── Notify user (provisional approval pending final documentation)
+├── Forward to tri-partite panel for human review  [CSAR §6.2]
+└── Store full TapeAgent history linked to application_id
+│
+└── ELSE → Calculate SUBSIDY
+│
+├── Determine reimbursement rate based on income percentile:  [CSAR §4.1]
+│   ├── < 25th percentile → 85%
+│   ├── 25th–50th percentile → 60%
+│   ├── 50th–75th percentile → 30%
+│
+├── Enforce cap: max 2 minors reimbursed unless exceptional hardship proven  [CSAR §4.2]
+│
+├── IF num_children > 3 AND income < 15th percentile:
+│   ├── Label = “human_evaluation”
+│   ├── Forward to tri-partite panel
+│   └── Store full TapeAgent history
+│
+└── ELSE:
+├── Label = “approved”
+├── Send decision to Revenue Compliance Unit  [CSAR §5.1–5.2]
+└── Store full TapeAgent history linked to application_id
