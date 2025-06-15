@@ -257,11 +257,4 @@ print(chat_output)
 
 
 print(f"\n--- Application ID: {app_id} processed and saved ---\n")
-
-# Display all entries from the database
-print("\n--- ALL APPLICATIONS IN DATABASE ---\n")
-conn_teammate = sqlite3.connect("subsidy_applications.db")
-cursor_teammate = conn_teammate.cursor()
-for row in cursor_teammate.execute("SELECT application_nr, application_status, substr(history, 1, 100) FROM applications"):
-    print(row)
 conn_teammate.close()
