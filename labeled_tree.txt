@@ -1,0 +1,36 @@
+START
+│
+├── ELIGIBILITY CHECKS:
+│   ├── applicant['residency_months'] ≥ 6
+│   ├── (
+│       applicant['employment_status'] in ["employed", "part-time", "self-employed", "student", "freelancer"]
+│       OR applicant['partner_employed'] == True
+│     )
+│   ├── applicant['household_income'] < UQR
+│   ├── applicant['flags']['incomplete_docs'] == False
+│   ├── any(age < 12 for age in applicant['child_ages'])
+│
+└── IF ANY FAIL → reject
+    ELSE → continue
+    │
+    ├── VULNERABILITY CHECK:
+    │   ├── applicant['partner_employed'] == False
+    │   └── applicant['flags']['social_support_flagged'] == True
+    │
+    └── IF ANY TRUE → check_by_human
+        ELSE → continue
+        │
+        ├── SUBSIDY CALCULATION:
+        │   ├── applicant['household_income'] percentile:
+        │   │   ├── < 25 → 85%
+        │   │   ├── 25–50 → 60%
+        │   │   ├── 50–75 → 30%
+        │
+        ├── CAP ENFORCEMENT:
+        │   ├── max_reimbursed_children = min(2, applicant['num_children'])
+        │
+        └── HARD CASE CHECK:
+            ├── applicant['num_children'] > 3
+            ├── AND applicant['household_income'] < 15th percentile
+            └── → human_evaluation
+                ELSE → approve
