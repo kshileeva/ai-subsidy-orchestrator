@@ -1,5 +1,5 @@
 START
-│
+
 ├── ELIGIBILITY CHECKS:
 │   ├── applicant['residency_months'] ≥ 6
 │   ├── (
@@ -8,29 +8,33 @@ START
 │     )
 │   ├── applicant['household_income'] < UQR
 │   ├── applicant['flags']['incomplete_docs'] == False
+│   ├── applicant['flags']['income_mismatch'] == False
 │   ├── any(age < 12 for age in applicant['child_ages'])
-│
+
 └── IF ANY FAIL → reject
     ELSE → continue
     │
     ├── VULNERABILITY CHECK:
     │   ├── applicant['partner_employed'] == False
-    │   └── applicant['flags']['social_support_flagged'] == True
-    │
+    │   ├── applicant['flags']['social_support_flagged'] == True
+    │   ├── applicant['recent_municipal_support'] is not empty
+    │   ├── applicant['housing_situation'] in ["municipal housing", "temporary shelter"]
+
     └── IF ANY TRUE → check_by_human
         ELSE → continue
         │
-        ├── SUBSIDY CALCULATION:
-        │   ├── applicant['household_income'] percentile:
-        │   │   ├── < 25 → 85%
-        │   │   ├── 25–50 → 60%
-        │   │   ├── 50–75 → 30%
-        │
+        ├── SUBSIDY CALCULATION IN EUROS:
+        │   ├── applicant['household_income'] percentile (based on EU municipality with median income ≈ €40,000):
+        │   │   ├── < 25 → maximum 85% coverage (not higher)
+        │   │   ├── 25–50 → maximum 60% coverage
+        │   │   ├── 50–75 → maximum 30% coverage
+        │   │   ├── > 75 → likely ineligible
+
         ├── CAP ENFORCEMENT:
-        │   ├── max_reimbursed_children = min(2, applicant['num_children'])
-        │
+        │   ├── max_reimbursed_children = min(2, applicant['num_children']) provide subsidy for maximum 2 minors of a guardian
+
         └── HARD CASE CHECK:
-            ├── applicant['num_children'] > 3
-            ├── AND applicant['household_income'] < 15th percentile
+            ├── applicant['num_children']
+            ├── AND applicant['household_income'] < 25th percentile
             └── → human_evaluation
                 ELSE → approve
