@@ -1,0 +1,22 @@
+{
+  "application_id": "A008",
+  "applicant_name": "Raj Patel",
+  "household_income": 22287,
+  "employment_status": "part-time",
+  "num_children": 1,
+  "child_ages": [
+    3
+  ],
+  "childcare_hours_requested": 83,
+  "housing_situation": "rental",
+  "partner_employed": true,
+  "recent_municipal_support": [
+    "housing benefit",
+    "food aid"
+  ],
+  "flags": {
+    "incomplete_docs": false,
+    "high_hours_request": false,
+    "income_mismatch": false
+  }
+}

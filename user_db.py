@@ -85,5 +85,4 @@ print(tabulate(
     tablefmt="grid"
 ))
 
-# Step 6: Close DB
 conn.close()

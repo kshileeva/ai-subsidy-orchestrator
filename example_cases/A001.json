@@ -1,62 +1,21 @@
 {
-  "metadata": {
-    "id": "b7c875e5-37c4-4b35-8a17-930394ae9299",
-    "parent_id": "06c459c9-ea8f-4a20-ba78-b11965949385",
-    "author": "Agent",
-    "author_tape_id": null,
-    "n_added_steps": 3,
-    "error": null,
-    "result": {}
-  },
-  "context": null,
-  "steps": [
-    {
-      "metadata": {
-        "id": "7cba548b-3cb1-4ba9-84b1-8e1791d781af",
-        "prompt_id": "",
-        "node": "",
-        "agent": "",
-        "llm": "",
-        "other": {}
-      },
-      "kind": "user",
-      "content": "You are an ethical municipal AI agent evaluating childcare subsidy applications.\nClassify the following case as one of:\n- accept (if all rules are met and subsidy is computable)\n- reject (if there are clear disqualifiers)\n- human evaluation (if ambiguous or risky)\n\nThen explain the reasoning and estimate the subsidy if applicable.\n\nApplication:\n{\n  \"application_id\": \"A001\",\n  \"applicant_name\": \"Laura Visser\",\n  \"household_income\": 63506,\n  \"employment_status\": \"unemployed\",\n  \"num_children\": 1,\n  \"child_ages\": [\n    3\n  ],\n  \"childcare_hours_requested\": 137,\n  \"housing_situation\": \"municipal housing\",\n  \"partner_employed\": true,\n  \"recent_municipal_support\": [\n    \"food aid\"\n  ],\n  \"flags\": {\n    \"incomplete_docs\": true,\n    \"high_hours_request\": true,\n    \"income_mismatch\": false\n  }\n}"
-    },
-    {
-      "metadata": {
-        "id": "caaf7e1e-6d29-40d9-a3ba-9aaad3817342",
-        "prompt_id": "69805e0c-ea84-44c0-b65c-97d4b40394bf",
-        "node": "observe",
-        "agent": "Agent",
-        "llm": "default",
-        "other": {}
-      },
-      "kind": "reasoning_thought",
-      "reasoning": "Here are the extracted features from the application:\n\n### **Key Features:**\n1. **Applicant Details:**  \n   - Name: Laura Visser  \n   - Employment Status: Unemployed  \n   - Household Income: \u20ac63,506  \n   - Housing Situation: Municipal housing  \n\n2. **Childcare Needs:**  \n   - Number of Children: 1  \n   - Child Age: 3 years old  \n   - Childcare Hours Requested: 137 (flagged as \"high_hours_request\")  \n\n3. **Household Composition:**  \n   - Partner Employed: Yes  \n\n4. **Support History:**  \n   - Recent Municipal Support Received: Food aid  \n\n5. **Application Flags:**  \n   - Incomplete Documentation: Yes  \n   - High Hours Request: Yes  \n   - Income Mismatch: No  \n\n### **Potential Concerns:**  \n- **Incomplete Documentation** may require verification before approval.  \n- **High Hours Requested** (137 hours) may exceed typical thresholds for a single child.  \n- **Household Income (\u20ac63,506)** combined with **partner employment** may affect subsidy eligibility.  \n\nWould you like a classification (accept/reject/human evaluation) based on these features?"
-    },
-    {
-      "metadata": {
-        "id": "d59d89e8-4ede-443e-8a2e-186a5c914ec9",
-        "prompt_id": "6ee418e9-856e-40d0-8477-e2d6e46415c4",
-        "node": "think",
-        "agent": "Agent",
-        "llm": "default",
-        "other": {}
-      },
-      "kind": "reasoning_thought",
-      "reasoning": "### **Step-by-Step Evaluation of Laura Visser\u2019s Childcare Subsidy Application**  \n\n#### **1. Eligibility Check (Basic Criteria)**  \n- **Income Threshold:**  \n  - Assume municipal rules cap eligibility at **\u20ac65,000** for a household with 1 child.  \n  - **Household income: \u20ac63,506** \u2192 **Within limit** (but close to threshold).  \n- **Employment Status:**  \n  - **Unemployed applicant + employed partner** \u2192 May still qualify if combined income is below threshold.  \n- **Child Age (3 years old):**  \n  - Eligible for subsidized childcare (not yet school age).  \n- **Housing Situation (Municipal Housing):**  \n  - Suggests financial vulnerability, reinforcing eligibility.  \n\n**\u2192 Passes basic eligibility.**  \n\n---  \n\n#### **2. Vulnerability Assessment (Priority Factors)**  \n- **Recent Municipal Support (Food Aid):**  \n  - Indicates financial hardship \u2192 **higher priority for support**.  \n- **Housing Situation:**  \n  - Municipal housing suggests low-income status.  \n- **Single Child, but High Hours Requested (137h/month):**  \n  - **Possible justification:** Job-seeking, training, or health needs (but undocumented).  \n\n**\u2192 High vulnerability, but hours need verification.**  \n\n---  \n\n#### **3. Subsidy Calculation (If Approved)**  \nAssume a **sliding scale subsidy** based on income and hours:  \n- **Base rate:** \u20ac8/hour (municipal rate for low-income households).  \n- **Income adjustment:**  \n  - \u20ac63,506 is **97.7% of \u20ac65,000 cap** \u2192 subsidy reduced proportionally.  \n  - **Adjusted rate:** \u20ac8 \u00d7 (1 - 0.977) \u2248 **\u20ac0.18/hour** (unreasonable).  \n  - Likely **minimum floor applies** (e.g., \u20ac4/hour).  \n- **Total subsidy:**  \n  - 137h \u00d7 \u20ac4 = **\u20ac548/month** (if approved).  \n\n**\u2192 Computable, but high hours may trigger review.**  \n\n---  \n\n#### **4. Risk & Edge Cases**  \n- **Incomplete Documentation:**  \n  - Missing proof of job search, partner\u2019s income, or childcare necessity.  \n- **High Hours (137h):**  \n  - Full-time care (\u224835h/week) for 1 child is unusual without justification (e.g., disability, work/training).  \n- **Partner Employed:**  \n  - Why is childcare needed if one parent is unemployed? Possible shared custody or other factors.  \n\n**\u2192 Ambiguities require human review.**  \n\n---  \n\n### **Final Classification: Human Evaluation**  \n**Reasoning:**  \n- **Eligible on paper**, but **incomplete docs + high hours** raise fraud/need verification risks.  \n- **Subsidy is computable (~\u20ac548/month)**, but approval depends on clarifying:  \n  1. Why 137h are needed (training? medical?).  \n  2. Partner\u2019s income details (possible underreporting?).  \n  3. Documentation of unemployment status.  \n\n**Recommendation:**  \n- **Conditional approval** pending document submission, or **caseworker review** for hour justification.  \n- If hours are validated, **approve with adjusted subsidy** (e.g., capped at 30h/week).  \n\n**Alternative:** If policy strictly rejects incomplete apps \u2192 **Reject**, but this penalizes vulnerable cases. Human review is preferable."
-    },
-    {
-      "metadata": {
-        "id": "7bcd9d08-85e4-4879-9729-59e7aea0e9ae",
-        "prompt_id": "f0047411-dde9-499f-86f3-77d2987c1ef6",
-        "node": "act",
-        "agent": "Agent",
-        "llm": "default",
-        "other": {}
-      },
-      "kind": "final_step",
-      "reason": "The case is labeled as **human_evaluation** due to ambiguities and risks, including incomplete documentation, unusually high childcare hours requested (137h/month), and the need to verify the employment status of the partner. While the household income is within the threshold, the lack of clarity on these key points makes automated approval or rejection inappropriate. A human caseworker should review the application to assess the justification for the hours requested and validate the documentation before a final decision is made."
-    }
-  ]
+  "application_id": "A001",
+  "applicant_name": "Laura Visser",
+  "household_income": 63506,
+  "employment_status": "unemployed",
+  "num_children": 1,
+  "child_ages": [
+    3
+  ],
+  "childcare_hours_requested": 137,
+  "housing_situation": "municipal housing",
+  "partner_employed": true,
+  "recent_municipal_support": [
+    "food aid"
+  ],
+  "flags": {
+    "incomplete_docs": true,
+    "high_hours_request": true,
+    "income_mismatch": false
+  }
 }
